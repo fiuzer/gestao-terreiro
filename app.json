@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "gestao-terreiro",
+    "name": "Gestão do Terreiro",
     "slug": "gestao-terreiro",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -10,21 +10,31 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#FFFFFF"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
+      "package": "com.ekedymeire.gestaoTerreiro",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#FFFFFF"
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-sqlite"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "31a9cbe6-d9ea-486f-b5ef-e0276a763287"
+      }
+    },
+    "owner": "rezuif"
   }
 }

@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pdf.gerarHTMLPlanilha snapshot estável (data congelada) 1`] = `
+"<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>Despesas Maio</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #1A1024;
+    margin: 0;
+    padding: 32px;
+    background: #FFFFFF;
+  }
+  header {
+    background: #4A148C;
+    color: #FFFFFF;
+    padding: 20px 24px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+  }
+  header .sub {
+    margin-top: 4px;
+    font-size: 13px;
+    color: #F0EAF5;
+  }
+  h2 {
+    margin: 24px 0 8px;
+    font-size: 15px;
+    color: #4F4159;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  thead th {
+    background: #F0EAF5;
+    color: #311070;
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 2px solid #C5B6D2;
+    font-weight: 700;
+  }
+  tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #E0D6E8;
+    vertical-align: top;
+  }
+  tbody tr:nth-child(even) td { background: #FAF7FC; }
+  td.num, th.num { text-align: right; white-space: nowrap; }
+  td.center, th.center { text-align: center; }
+  .entrada { color: #2E7D32; font-weight: 600; }
+  .saida { color: #C62828; font-weight: 600; }
+  .pago { color: #2E7D32; }
+  .pendente { color: #C62828; }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .badge-pago { background: #E6F4E7; color: #2E7D32; }
+  .badge-pendente { background: #FCE8E8; color: #C62828; }
+  footer {
+    margin-top: 24px;
+    background: #F0EAF5;
+    border-radius: 12px;
+    padding: 16px 20px;
+  }
+  footer .totals {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  footer .cell {
+    flex: 1;
+    text-align: center;
+  }
+  footer .label {
+    font-size: 11px;
+    color: #4F4159;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  footer .value {
+    margin-top: 4px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1A1024;
+  }
+  .meta {
+    margin-top: 18px;
+    font-size: 11px;
+    color: #7A6F85;
+    text-align: right;
+  }
+  .empty {
+    padding: 32px;
+    text-align: center;
+    color: #7A6F85;
+    background: #F5F2F8;
+    border-radius: 10px;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Despesas Maio</h1>
+    <div class="sub">Maio de 2026</div>
+  </header>
+
+  <h2>Lançamentos</h2>
+  <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th class="center">Tipo</th>
+              <th>Data</th>
+              <th class="center">Status</th>
+              <th class="num">Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                  <td>
+                    <div style="font-weight:600;">Doação</div>
+                    
+                  </td>
+                  <td class="center"><span class="entrada">Entrada</span></td>
+                  <td>10/05/2026</td>
+                  <td class="center"><span class="badge badge-pago">Pago</span></td>
+                  <td class="num entrada">R$ 500,00</td>
+                </tr><tr>
+                  <td>
+                    <div style="font-weight:600;">Compra papelaria</div>
+                    <div style="font-size:11px;color:#7A6F85;margin-top:2px;">obs</div>
+                  </td>
+                  <td class="center"><span class="saida">Saída</span></td>
+                  <td>12/05/2026</td>
+                  <td class="center"><span class="badge badge-pendente">Pendente</span></td>
+                  <td class="num saida">R$ 75,50</td>
+                </tr>
+          </tbody>
+        </table>
+
+  <footer>
+    <div class="totals">
+      <div class="cell">
+        <div class="label">Entradas</div>
+        <div class="value entrada">R$ 500,00</div>
+      </div>
+      <div class="cell">
+        <div class="label">Saídas</div>
+        <div class="value saida">R$ 75,50</div>
+      </div>
+      <div class="cell">
+        <div class="label">Saldo</div>
+        <div class="value">R$ 424,50</div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="meta">Gerado em 17/05/2026 10:30</div>
+</body>
+</html>"
+`;

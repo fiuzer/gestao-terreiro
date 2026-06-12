@@ -1,20 +1,48 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Suspense } from "react";
+import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { SQLiteProvider } from "expo-sqlite";
+import { DATABASE_NAME, initDB } from "@/db/database";
+import { palette, spacing, typography } from "@/themes";
+import { AppNavigator } from "@/navigation/AppNavigator";
 
-export default function App() {
+function LoadingScreen() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={styles.loadingContainer}>
+      <ActivityIndicator size="large" color={palette.accent} />
+      <Text style={styles.loadingText}>Carregando banco de dados…</Text>
     </View>
   );
 }
 
+export default function App() {
+  return (
+    <SafeAreaProvider>
+      <StatusBar style="light" backgroundColor={palette.primary} />
+      <Suspense fallback={<LoadingScreen />}>
+        <SQLiteProvider
+          databaseName={DATABASE_NAME}
+          onInit={initDB}
+          useSuspense
+        >
+          <AppNavigator />
+        </SQLiteProvider>
+      </Suspense>
+    </SafeAreaProvider>
+  );
+}
+
 const styles = StyleSheet.create({
-  container: {
+  loadingContainer: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: palette.background,
+    gap: spacing.lg,
+  },
+  loadingText: {
+    ...typography.body,
+    color: palette.textSecondary,
   },
 });
